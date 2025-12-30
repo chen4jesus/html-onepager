@@ -24,11 +24,6 @@ for (const dir of candidates) {
   }
 }
 
-// 2. Fallback: If still root, but 'public' exists (even without index.html), prefer public
-// This handles cases where index.html might be missing but assets are in public
-if (serveTarget === '.' && fs.existsSync(path.join(projectRoot, 'public'))) {
-    serveTarget = 'public';
-}
 
 console.debug(`🚀 Starting static file server on port ${port}`);
 console.debug(`📂 Serving directory: ${serveTarget}`);
